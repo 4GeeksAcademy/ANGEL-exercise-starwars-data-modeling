@@ -41,7 +41,7 @@ class Usuario(Base):
 class Favoritos(Base):
     __tablename__ = 'favoritos'
     id = Column(Integer, primary_key = True)
-    usuario_id = Column(Integer, ForeignKey('usuario.id'), nullable = False)
+    usuario_id = Column(Integer, ForeignKey('usuario.id'), nullable = True)
     usuario = relationship(Usuario)
     personaje_id = Column(Integer, ForeignKey('personaje.id'), nullable = True)
     personaje = relationship(Personaje)
